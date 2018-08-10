@@ -8,7 +8,7 @@ def convert_number(s):
     try:
         return int(s)
     except ValueError:
-        return s
+        return s.lower()
 
 def scan(stuff):
     words = stuff.split()
