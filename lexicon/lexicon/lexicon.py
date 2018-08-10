@@ -1,5 +1,4 @@
-from functools import reduce
-
+# thought: API call to dictonary service to test words instead of using a local tuple
 myTuple = [('direction', 'north'),('direction', 'south'),('direction', 'east'),('verb','go'),
                         ('verb','kill'),('verb','eat'),('stop','the'),
                         ('stop','in'),('stop','of'),('noun','bear'),('noun','princess'),
@@ -11,8 +10,8 @@ def convert_number(s):
     except ValueError:
         return s
 
-def scan(input):
-    words = input.split()
+def scan(stuff):
+    words = stuff.split()
     r = []
     e = []
     rx =[]
@@ -37,6 +36,8 @@ def scan(input):
     r.sort(key=lambda x: cWords.index(x[1]))  # had to sort r based on cWords for automated tests to pass
 
     return r           
-
-result = scan('kill the asdf north princess 3' )
+stuffing = input('$> ')
+result = scan(stuffing)
 print(result)
+
+#'kill the asdf north princess 3'
